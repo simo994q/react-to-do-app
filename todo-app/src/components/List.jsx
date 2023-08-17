@@ -39,7 +39,7 @@ export function List() {
                         addItem('');
                     }}
                 >
-                    <input onChange={(event) => { addItem(event.target.value)}} value={newItem} />
+                    <input onChange={(event) => { if (event.target.value.length != 0) {addItem(event.target.value)}}} value={newItem} />
                     <input type='submit' value='+ Add new' />
                 </form>
 
