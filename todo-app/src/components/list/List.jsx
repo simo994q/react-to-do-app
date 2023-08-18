@@ -24,7 +24,7 @@ export function List() {
             setDoneArray(updatedArray);
         }
     }
-    
+
     const moveItem = (fromArray, toArray, index, setArrayFrom, setArrayTo) => {
         const movedItem = fromArray.filter((_, i) => i == index);
         setArrayTo([...toArray, movedItem])
@@ -61,12 +61,18 @@ export function List() {
                 <form
                     className={style.newItemContainer}
                     onSubmit={(event) => {
-                        event.preventDefault();
-                        setArray([...itemArray, newItem]);
-                        addItem('');
+                        if (event.target.inputField.value.length == 0) {
+                            event.preventDefault();
+                            return
+                        } else {
+                            event.preventDefault();
+                            setArray([...itemArray, newItem]);
+                            addItem('');
+                        }
+
                     }}
                 >
-                    <input onChange={(event) => { addItem(event.target.value) }} value={newItem} className={style.newItem} />
+                    <input onChange={(event) => { addItem(event.target.value) }} value={newItem} className={style.newItem} name='inputField'/>
                     <input type='submit' value='Add new' className={style.submitButton} />
                     <input type='button' onClick={() => deleteAll()} value='Delete all' className={style.deleteAll} />
                 </form>
@@ -102,7 +108,7 @@ export function List() {
                                 return (
                                     <tr key={index}>
                                         <td>{item}</td>
-                                        <td onClick={() => { moveItem(doneArray, progressArray, index, setDoneArray, setProgressArray)}} className={style.listButton}>⬅️</td>
+                                        <td onClick={() => { moveItem(doneArray, progressArray, index, setDoneArray, setProgressArray) }} className={style.listButton}>⬅️</td>
                                         <td onClick={() => { removeItem(index, doneArray, 3) }} className={style.listButton}>➖</td>
                                     </tr>
                                 )
