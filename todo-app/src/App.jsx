@@ -5,8 +5,8 @@ function App() {
 
   return (
     <>
-      {/* <List /> */}
-      <NewList />
+      <List />
+      {/* <NewList /> */}
     </>
   )
 }
