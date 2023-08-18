@@ -51,7 +51,7 @@ export function List() {
                                     <div key={index} className={style.item}>
                                         <div className={style.itemTitle}>{item}</div>
                                         <figure className={style.buttonsContainer}>
-                                            <div onClick={() => { removeItem(index, itemArray, 1) }} className={style.listButton}>➖</div>
+                                            <div onClick={() => { removeItem(index, itemArray, 1) }} className={style.listButton}>❌</div>
                                             <div onClick={() => { moveItem(itemArray, progressArray, index, setArray, setProgressArray) }} className={style.listButton}>➡️</div>
                                         </figure>
                                     </div>
@@ -92,7 +92,7 @@ export function List() {
                                         <div className={style.itemTitle}>{item}</div>
                                         <figure className={style.buttonsContainer}>
                                             <div onClick={() => { moveItem(progressArray, itemArray, index, setProgressArray, setArray) }} className={style.listButton}>⬅️</div>
-                                            <div onClick={() => { removeItem(index, progressArray, 2) }} className={style.listButton}>➖</div>
+                                            <div onClick={() => { removeItem(index, progressArray, 2) }} className={style.listButton}>❌</div>
                                             <div onClick={() => { moveItem(progressArray, doneArray, index, setProgressArray, setDoneArray) }} className={style.listButton}>➡️</div>
                                         </figure>
                                     </div>
@@ -114,7 +114,7 @@ export function List() {
                                         <div className={style.itemTitle}>{item}</div>
                                         <figure className={style.buttonsContainer}>
                                             <div onClick={() => { moveItem(doneArray, progressArray, index, setDoneArray, setProgressArray) }} className={style.listButton}>⬅️</div>
-                                            <div onClick={() => { removeItem(index, doneArray, 3) }} className={style.listButton}>➖</div>
+                                            <div onClick={() => { removeItem(index, doneArray, 3) }} className={style.listButton}>❌</div>
                                         </figure>
                                     </div>
                                 )
