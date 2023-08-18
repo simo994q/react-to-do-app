@@ -1,15 +1,20 @@
-import style from './List.module.scss'
+import style from './NewList.module.scss'
 import { useState } from 'react'
 
-export function List() {
+export function NewList() {
 
     const [itemArray, setArray] = useState([])
-    const [newItem, addItem] = useState('')
 
-    const removeItem = (index) => {
+    const [newItem, setNewItem] = useState('')
+
+    function addItem (item) {
+        setArray([...itemArray, item])
+    }
+
+    function removeItem (index) {
         const updatedArray = itemArray.filter((_, i) => i !== index);
-        setArray(updatedArray);
-    };
+        setArray(updatedArray)
+    }
 
     return (
         <div className={style.fullContainer}>
@@ -33,12 +38,12 @@ export function List() {
                 <form
                     className={style.newItemContainer}
                     onSubmit={(event) => {
-                        event.preventDefault(); // Prevent the default form submission behavior
-                        setArray([...itemArray, newItem]); // Update the array with the new item
-                        addItem('');
+                        event.preventDefault();
+                        setArray([...itemArray, item])
+                        addItem(newItem);
                     }}
                 >
-                    <input onChange={(event) => { addItem(event.target.value) }} value={newItem} />
+                    <input type='text' onChange={(event) => setNewItem(event.target.value)}/>
                     <input type='submit' value='+ Add new' />
                 </form>
 
