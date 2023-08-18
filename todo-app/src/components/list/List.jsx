@@ -11,6 +11,10 @@ export function List() {
         setArray(updatedArray);
     };
 
+    const deleteAll = () => {
+        setArray([])
+    }
+
     return (
         <div className={style.fullContainer}>
             <div className={style.container}>
@@ -38,8 +42,9 @@ export function List() {
                         addItem('');
                     }}
                 >
-                    <input onChange={(event) => { addItem(event.target.value) }} value={newItem} />
-                    <input type='submit' value='+ Add new' />
+                    <input onChange={(event) => { addItem(event.target.value) }} value={newItem} className={style.newItem}/>
+                    <input type='submit' value='Add new' className={style.submitButton}/>
+                    <input type='button' onClick={() => deleteAll()} value='Delete all' className={style.deleteAll}/>
                 </form>
 
             </div>
