@@ -4,13 +4,12 @@ import { useState } from 'react'
 export function List() {
 
     const [itemArray, setArray] = useState([])
-
     const [newItem, addItem] = useState('')
 
     const removeItem = (index) => {
         const updatedArray = itemArray.filter((_, i) => i !== index);
         setArray(updatedArray);
-      };
+    };
 
     return (
         <div className={style.fullContainer}>
@@ -24,7 +23,7 @@ export function List() {
                                 return (
                                     <tr key={index}>
                                         <td>{item}</td>
-                                        <td onClick={() => {removeItem(index)}}>remove</td>
+                                        <td onClick={() => { removeItem(index) }}>remove</td>
                                     </tr>
                                 )
                             })}
@@ -39,7 +38,7 @@ export function List() {
                         addItem('');
                     }}
                 >
-                    <input onChange={(event) => { if (event.target.value.length != 0) {addItem(event.target.value)}}} value={newItem} />
+                    <input onChange={(event) => { addItem(event.target.value) }} value={newItem} />
                     <input type='submit' value='+ Add new' />
                 </form>
 
