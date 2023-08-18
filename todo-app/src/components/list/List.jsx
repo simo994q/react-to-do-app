@@ -33,8 +33,8 @@ export function List() {
                 <form
                     className={style.newItemContainer}
                     onSubmit={(event) => {
-                        event.preventDefault(); // Prevent the default form submission behavior
-                        setArray([...itemArray, newItem]); // Update the array with the new item
+                        event.preventDefault();
+                        setArray([...itemArray, newItem]);
                         addItem('');
                     }}
                 >

@@ -48,6 +48,7 @@ $black: #1E1E1E;
             tr {
                 // padding: 0.5rem 0;
                 border-spacing: 0;
+                animation: fadein 0.15s ease-in-out 0.2s 1 normal both;
 
                 td {
                     width: 100%;
@@ -97,5 +98,14 @@ $black: #1E1E1E;
             padding: 0.3rem;
             cursor: pointer;
         }
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
