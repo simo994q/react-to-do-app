@@ -14,8 +14,9 @@ $black: #1E1E1E;
 .fullContainer {
     height: 100vh;
     width: 100vw;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     background: rgb(100, 186, 221);
     background: linear-gradient(0deg, rgb(24, 67, 84) 0%, rgb(27, 100, 152) 100%);
 }
@@ -25,7 +26,6 @@ $black: #1E1E1E;
     height: 70vh;
     background-color: $beige;
     padding: 4rem;
-    margin: auto;
 
     h1 {
         font-family: 'Indie Flower';
@@ -60,7 +60,7 @@ $black: #1E1E1E;
                     text-decoration: underline;
                 }
 
-                td:last-of-type {
+                .listButton {
                     padding: 0.3rem 0.5rem;
                     margin: 0.3rem;
                     cursor: pointer;
@@ -68,7 +68,7 @@ $black: #1E1E1E;
                     transition: 400ms;
                 }
 
-                td:last-of-type:hover {
+                .listButton:hover {
                     background-color: #e3c969;
                 }
             }
