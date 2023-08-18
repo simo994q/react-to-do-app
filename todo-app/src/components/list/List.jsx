@@ -48,11 +48,13 @@ export function List() {
                         <tbody>
                             {itemArray.map((item, index) => {
                                 return (
-                                    <tr key={index}>
-                                        <td>{item}</td>
-                                        <td onClick={() => { removeItem(index, itemArray, 1) }} className={style.listButton}>➖</td>
-                                        <td onClick={() => { moveItem(itemArray, progressArray, index, setArray, setProgressArray) }} className={style.listButton}>➡️</td>
-                                    </tr>
+                                    <div key={index} className={style.item}>
+                                        <div className={style.itemTitle}>{item}</div>
+                                        <figure className={style.buttonsContainer}>
+                                            <div onClick={() => { removeItem(index, itemArray, 1) }} className={style.listButton}>➖</div>
+                                            <div onClick={() => { moveItem(itemArray, progressArray, index, setArray, setProgressArray) }} className={style.listButton}>➡️</div>
+                                        </figure>
+                                    </div>
                                 )
                             })}
                         </tbody>
@@ -72,7 +74,7 @@ export function List() {
 
                     }}
                 >
-                    <input onChange={(event) => { addItem(event.target.value) }} value={newItem} className={style.newItem} name='inputField'/>
+                    <input onChange={(event) => { addItem(event.target.value) }} value={newItem} className={style.newItem} name='inputField' />
                     <input type='submit' value='Add new' className={style.submitButton} />
                     <input type='button' onClick={() => deleteAll()} value='Delete all' className={style.deleteAll} />
                 </form>
@@ -86,12 +88,14 @@ export function List() {
                         <tbody>
                             {progressArray.map((item, index) => {
                                 return (
-                                    <tr key={index}>
-                                        <td>{item}</td>
-                                        <td onClick={() => { moveItem(progressArray, itemArray, index, setProgressArray, setArray) }} className={style.listButton}>⬅️</td>
-                                        <td onClick={() => { removeItem(index, progressArray, 2) }} className={style.listButton}>➖</td>
-                                        <td onClick={() => { moveItem(progressArray, doneArray, index, setProgressArray, setDoneArray) }} className={style.listButton}>➡️</td>
-                                    </tr>
+                                    <div key={index} className={style.item}>
+                                        <div className={style.itemTitle}>{item}</div>
+                                        <figure className={style.buttonsContainer}>
+                                            <div onClick={() => { moveItem(progressArray, itemArray, index, setProgressArray, setArray) }} className={style.listButton}>⬅️</div>
+                                            <div onClick={() => { removeItem(index, progressArray, 2) }} className={style.listButton}>➖</div>
+                                            <div onClick={() => { moveItem(progressArray, doneArray, index, setProgressArray, setDoneArray) }} className={style.listButton}>➡️</div>
+                                        </figure>
+                                    </div>
                                 )
                             })}
                         </tbody>
@@ -106,11 +110,13 @@ export function List() {
                         <tbody>
                             {doneArray.map((item, index) => {
                                 return (
-                                    <tr key={index}>
-                                        <td>{item}</td>
-                                        <td onClick={() => { moveItem(doneArray, progressArray, index, setDoneArray, setProgressArray) }} className={style.listButton}>⬅️</td>
-                                        <td onClick={() => { removeItem(index, doneArray, 3) }} className={style.listButton}>➖</td>
-                                    </tr>
+                                    <div key={index} className={style.item}>
+                                        <div className={style.itemTitle}>{item}</div>
+                                        <figure className={style.buttonsContainer}>
+                                            <div onClick={() => { moveItem(doneArray, progressArray, index, setDoneArray, setProgressArray) }} className={style.listButton}>⬅️</div>
+                                            <div onClick={() => { removeItem(index, doneArray, 3) }} className={style.listButton}>➖</div>
+                                        </figure>
+                                    </div>
                                 )
                             })}
                         </tbody>

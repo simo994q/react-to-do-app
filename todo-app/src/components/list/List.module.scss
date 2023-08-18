@@ -36,44 +36,51 @@ $black: #1E1E1E;
         margin-bottom: 3rem;
     }
 
-    table {
-        width: 100%;
-        min-height: 400px;
+    .itemsContainer {
+        table {
+            width: 100%;
+            min-height: 400px;
 
-        tbody {
-            display: flex;
-            flex-direction: column;
+            tbody {
+                display: flex;
+                flex-direction: column;
 
-            tr {
-                // padding: 0.5rem 0;
-                border-spacing: 0;
-                animation: fadein 0.15s ease-in-out 0.2s 1 normal both;
-
-                td {
+                .item {
+                    display: flex;
                     width: 100%;
-                    font-family: 'Inter';
-                }
+                    flex-direction: row;
+                    justify-content: space-between;
+                    animation: fadein 0.15s ease-in-out 0.2s 1 normal both;
 
-                td:first-of-type {
-                    padding: 0.5rem 0;
-                    border-right: 2px solid $black;
-                    text-decoration: underline;
-                }
+                    .itemTitle {
+                        padding: 0.5rem 0;
+                        border-right: 2px solid $black;
+                        text-decoration: underline;
+                        width: 100%;
+                        font-family: 'Inter';
+                    }
 
-                .listButton {
-                    padding: 0.3rem 0.5rem;
-                    margin: 0.3rem;
-                    cursor: pointer;
-                    border-radius: 0.3rem;
-                    transition: 400ms;
-                }
+                    .buttonsContainer {
+                        display: flex;
+                        flex-direction: row;
 
-                .listButton:hover {
-                    background-color: #e3c969;
+                        .listButton {
+                            padding: 0.3rem 0.5rem;
+                            cursor: pointer;
+                            border-radius: 0.3rem;
+                            transition: 400ms;
+                        }
+
+                        .listButton:hover {
+                            background-color: #e3c969;
+                        }
+                    }
+
                 }
             }
         }
     }
+
 
     .newItemContainer {
         display: flex;
@@ -105,6 +112,7 @@ $black: #1E1E1E;
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
