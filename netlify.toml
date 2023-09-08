@@ -1,0 +1,4 @@
+[base]
+    base = "/todo-app"
+    publish = "/dist/"
+    command = "vite build"
